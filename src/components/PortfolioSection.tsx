@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 
 const portfolioItems = [
   {
@@ -39,21 +38,36 @@ const portfolioItems = [
 
 export const PortfolioSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
   
-  const [emblaRef] = useEmblaCarousel(
-    { 
-      loop: true, 
-      align: "start",
-      dragFree: true,
-    },
-    [
-      Autoplay({ 
-        delay: 3000, 
-        stopOnInteraction: false,
-        stopOnMouseEnter: true,
-      })
-    ]
-  );
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true, 
+    align: "start",
+    dragFree: true,
+  });
+
+  // Smooth continuous scroll using CSS animation fallback
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const autoScroll = () => {
+      if (!isHovered && emblaApi) {
+        emblaApi.scrollNext();
+      }
+    };
+
+    const interval = setInterval(autoScroll, 2500);
+
+    return () => clearInterval(interval);
+  }, [emblaApi, isHovered]);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -89,21 +103,42 @@ export const PortfolioSection = () => {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="portfolio-reveal opacity-0 translate-y-4 transition-all duration-700 inline-block text-sm uppercase tracking-[0.2em] text-primary/80 mb-4">
-            Our Work
-          </span>
-          <h2 className="portfolio-reveal opacity-0 translate-y-4 transition-all duration-700 delay-100 text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-6">
-            Portfolio
-          </h2>
-          <p className="portfolio-reveal opacity-0 translate-y-4 transition-all duration-700 delay-200 text-muted-foreground max-w-2xl mx-auto">
-            Explore our completed projects showcasing excellence in facade insulation and renovation
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
+          <div>
+            <span className="portfolio-reveal opacity-0 translate-y-4 transition-all duration-700 inline-block text-sm uppercase tracking-[0.2em] text-primary/80 mb-4">
+              Our Work
+            </span>
+            <h2 className="portfolio-reveal opacity-0 translate-y-4 transition-all duration-700 delay-100 text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-4 md:mb-0">
+              Portfolio
+            </h2>
+          </div>
+          
+          {/* Navigation Arrows */}
+          <div className="portfolio-reveal opacity-0 translate-y-4 transition-all duration-700 delay-200 flex gap-3">
+            <button
+              onClick={scrollPrev}
+              className="w-12 h-12 rounded-full border border-border bg-secondary/50 hover:bg-secondary hover:border-primary/50 transition-all duration-300 flex items-center justify-center group"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+            </button>
+            <button
+              onClick={scrollNext}
+              className="w-12 h-12 rounded-full border border-border bg-secondary/50 hover:bg-secondary hover:border-primary/50 transition-all duration-300 flex items-center justify-center group"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Portfolio Carousel - Full width */}
-      <div className="portfolio-reveal opacity-0 translate-y-8 transition-all duration-700 delay-300">
+      <div 
+        className="portfolio-reveal opacity-0 translate-y-8 transition-all duration-700 delay-300"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-6 pl-6 lg:pl-12">
             {portfolioItems.map((item) => (
