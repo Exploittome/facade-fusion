@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-muted-foreground">
-            © {currentYear} FacadePro. All rights reserved.
+            © {currentYear} FTRENDERING. All rights reserved.
           </div>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-foreground transition-colors duration-300">

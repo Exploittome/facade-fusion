@@ -50,7 +50,7 @@ export function Header() {
             onClick={(e) => handleNavClick(e, "#home")}
             className="text-xl font-semibold tracking-tight text-foreground"
           >
-            FacadePro
+            FTRENDERING
           </a>
 
           {/* Desktop Navigation */}
