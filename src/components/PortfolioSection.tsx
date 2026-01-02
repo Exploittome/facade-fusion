@@ -36,6 +36,9 @@ const portfolioItems = [
   },
 ];
 
+// Duplicate items for seamless infinite scroll
+const duplicatedItems = [...portfolioItems, ...portfolioItems];
+
 export const PortfolioSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -45,21 +48,6 @@ export const PortfolioSection = () => {
     align: "start",
     dragFree: true,
   });
-
-  // Smooth continuous scroll using CSS animation fallback
-  useEffect(() => {
-    if (!emblaApi) return;
-
-    const autoScroll = () => {
-      if (!isHovered && emblaApi) {
-        emblaApi.scrollNext();
-      }
-    };
-
-    const interval = setInterval(autoScroll, 2500);
-
-    return () => clearInterval(interval);
-  }, [emblaApi, isHovered]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -133,17 +121,22 @@ export const PortfolioSection = () => {
         </div>
       </div>
 
-      {/* Portfolio Carousel - Full width */}
+      {/* Portfolio Carousel with CSS infinite scroll */}
       <div 
         className="portfolio-reveal opacity-0 translate-y-8 transition-all duration-700 delay-300"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6 pl-6 lg:pl-12">
-            {portfolioItems.map((item) => (
+          <div 
+            className="flex gap-6 pl-6 lg:pl-12"
+            style={{
+              animation: isHovered ? 'none' : 'smoothScroll 30s linear infinite',
+            }}
+          >
+            {duplicatedItems.map((item, index) => (
               <div 
-                key={item.title} 
+                key={`${item.title}-${index}`} 
                 className="flex-none w-[300px] md:w-[350px] lg:w-[400px]"
               >
                 <Card className="group cursor-pointer overflow-hidden border-0 bg-secondary/50 hover:bg-secondary transition-colors duration-300">
@@ -179,6 +172,15 @@ export const PortfolioSection = () => {
         .portfolio-reveal.revealed {
           opacity: 1 !important;
           transform: translateY(0) !important;
+        }
+        
+        @keyframes smoothScroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
       `}</style>
     </section>
