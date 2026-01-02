@@ -1,31 +1,21 @@
 import { useEffect, useState } from "react";
-import { Layers, Paintbrush, Grid3X3, Thermometer, Zap } from "lucide-react";
+import { Layers, Paintbrush, Thermometer } from "lucide-react";
 
 const services = [
   {
     icon: Layers,
     title: "External Wall Insulation",
-    description: "Comprehensive EWI systems that dramatically improve thermal performance and reduce energy costs.",
+    description: "Comprehensive EWI systems that dramatically improve thermal performance and reduce energy costs for residential and commercial buildings.",
   },
   {
     icon: Paintbrush,
     title: "Facade Rendering",
-    description: "Premium render finishes that protect and beautify your building's exterior for decades.",
-  },
-  {
-    icon: Grid3X3,
-    title: "Cladding Systems",
-    description: "Modern cladding solutions combining aesthetic appeal with exceptional durability.",
+    description: "Premium render finishes that protect and beautify your building's exterior with long-lasting durability and exceptional quality.",
   },
   {
     icon: Thermometer,
     title: "Thermal Upgrades",
-    description: "Expert thermal retrofitting to bring older buildings up to modern energy standards.",
-  },
-  {
-    icon: Zap,
-    title: "Energy Efficiency Solutions",
-    description: "Holistic approaches to minimize energy consumption and maximize building performance.",
+    description: "Expert thermal retrofitting solutions to bring older buildings up to modern energy standards and improve comfort.",
   },
 ];
 
@@ -75,59 +65,52 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Services Grid - 3 Cards */}
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
               key={service.title}
               className={`service-card reveal-on-scroll stagger-${index + 1} group relative overflow-hidden rounded-sm border border-border bg-card cursor-pointer`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ transitionDelay: `${index * 150}ms` }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Card Content - Always visible */}
-              <div className="relative z-10 p-8 h-48 flex flex-col items-center justify-center text-center transition-all duration-500">
-                <div className={`mb-4 transition-all duration-500 ${hoveredIndex === index ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'}`}>
+              <div className="relative z-10 p-10 h-64 flex flex-col items-center justify-center text-center transition-all duration-500">
+                <div className={`mb-6 transition-all duration-500 ${hoveredIndex === index ? 'opacity-0 scale-75' : 'opacity-100 scale-100'}`}>
                   <service.icon 
-                    size={40} 
+                    size={48} 
                     className="text-accent"
                     strokeWidth={1.5}
                   />
                 </div>
-                <h3 className={`text-lg font-medium text-foreground transition-all duration-500 ${hoveredIndex === index ? '-translate-y-8' : 'translate-y-0'}`}>
+                <h3 className={`text-xl font-medium text-foreground transition-all duration-500 ${hoveredIndex === index ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'}`}>
                   {service.title}
                 </h3>
               </div>
 
               {/* Hover Overlay with Description */}
               <div 
-                className={`absolute inset-0 z-20 flex items-center justify-center p-8 bg-accent/95 transition-all duration-500 ${
+                className={`absolute inset-0 z-20 flex items-center justify-center p-8 bg-accent transition-all duration-500 ease-out ${
                   hoveredIndex === index 
                     ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-full'
+                    : 'opacity-0 translate-y-full pointer-events-none'
                 }`}
               >
                 <div className="text-center">
                   <service.icon 
-                    size={32} 
-                    className="text-background mx-auto mb-4"
+                    size={36} 
+                    className="text-background mx-auto mb-5"
                     strokeWidth={1.5}
                   />
-                  <h3 className="text-lg font-medium text-background mb-3">
+                  <h3 className="text-xl font-medium text-background mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-background/80 leading-relaxed">
+                  <p className="text-sm text-background/85 leading-relaxed max-w-xs mx-auto">
                     {service.description}
                   </p>
                 </div>
               </div>
-
-              {/* Bottom accent line */}
-              <div 
-                className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-500 ${
-                  hoveredIndex === index ? 'w-full' : 'w-0'
-                }`}
-              />
             </div>
           ))}
         </div>
