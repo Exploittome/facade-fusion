@@ -64,6 +64,14 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-24 lg:py-32 bg-secondary overflow-hidden relative">
+      {/* Warm amber gradient from hero colors */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at center top, hsl(30 75% 50% / 0.07) 0%, transparent 55%), radial-gradient(ellipse at bottom left, hsl(20 65% 40% / 0.05) 0%, transparent 50%)'
+        }}
+      />
+      
       {/* Decorative diagonal lines background */}
       <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.04]">
         <div 
@@ -86,7 +94,7 @@ export function ContactSection() {
       <div 
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center, hsl(var(--accent) / 0.08) 0%, transparent 70%)'
+          background: 'radial-gradient(ellipse at center, hsl(35 70% 55% / 0.06) 0%, transparent 70%)'
         }}
       />
       <div className="container mx-auto px-6 lg:px-12 relative z-10">

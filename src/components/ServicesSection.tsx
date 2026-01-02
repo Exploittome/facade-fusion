@@ -60,6 +60,14 @@ export function ServicesSection() {
       ref={sectionRef}
       className="py-24 lg:py-32 bg-secondary overflow-hidden relative"
     >
+      {/* Warm gradient from hero colors */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at top left, hsl(35 80% 50% / 0.06) 0%, transparent 50%), radial-gradient(ellipse at bottom right, hsl(25 70% 45% / 0.04) 0%, transparent 60%)'
+        }}
+      />
+      
       {/* Decorative grid background */}
       <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
         <div 
