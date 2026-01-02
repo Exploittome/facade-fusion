@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Layers, Paintbrush, Grid3X3, Thermometer, Zap } from "lucide-react";
 
 const services = [
@@ -30,6 +30,8 @@ const services = [
 ];
 
 export function ServicesSection() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
@@ -78,22 +80,54 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`service-card reveal-on-scroll stagger-${index + 1} group p-8 bg-card rounded-sm border border-border hover:border-accent transition-all duration-500`}
-              data-reveal-id={`service-${index}`}
+              className={`service-card reveal-on-scroll stagger-${index + 1} group relative overflow-hidden rounded-sm border border-border bg-card cursor-pointer`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="mb-6">
-                <service.icon 
-                  size={32} 
-                  className="text-accent group-hover:text-foreground transition-colors duration-300"
-                  strokeWidth={1.5}
-                />
+              {/* Card Content - Always visible */}
+              <div className="relative z-10 p-8 h-48 flex flex-col items-center justify-center text-center transition-all duration-500">
+                <div className={`mb-4 transition-all duration-500 ${hoveredIndex === index ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'}`}>
+                  <service.icon 
+                    size={40} 
+                    className="text-accent"
+                    strokeWidth={1.5}
+                  />
+                </div>
+                <h3 className={`text-lg font-medium text-foreground transition-all duration-500 ${hoveredIndex === index ? '-translate-y-8' : 'translate-y-0'}`}>
+                  {service.title}
+                </h3>
               </div>
-              <h3 className="text-lg font-medium text-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
+
+              {/* Hover Overlay with Description */}
+              <div 
+                className={`absolute inset-0 z-20 flex items-center justify-center p-8 bg-accent/95 transition-all duration-500 ${
+                  hoveredIndex === index 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-full'
+                }`}
+              >
+                <div className="text-center">
+                  <service.icon 
+                    size={32} 
+                    className="text-background mx-auto mb-4"
+                    strokeWidth={1.5}
+                  />
+                  <h3 className="text-lg font-medium text-background mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-background/80 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Bottom accent line */}
+              <div 
+                className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-500 ${
+                  hoveredIndex === index ? 'w-full' : 'w-0'
+                }`}
+              />
             </div>
           ))}
         </div>
