@@ -54,7 +54,7 @@ export function Header() {
             <img 
               src={logo} 
               alt="FTRENDERING Logo" 
-              className="h-10 w-auto object-contain"
+              className="h-12 w-auto object-contain dark:invert"
             />
             <span className="text-xl font-semibold tracking-tight text-foreground">
               FTRENDERING
