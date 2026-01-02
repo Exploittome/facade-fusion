@@ -63,11 +63,11 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-secondary">
+    <section id="contact" className="py-24 lg:py-32 bg-secondary overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-2xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-12 contact-reveal reveal-on-scroll" data-reveal-id="contact-header">
+          <div className="text-center mb-12 contact-reveal opacity-0 translate-y-8 transition-all duration-700 ease-out [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
               Get in Touch
             </h2>
@@ -79,11 +79,10 @@ export function ContactSection() {
           {/* Contact Form */}
           <form 
             onSubmit={handleSubmit} 
-            className="contact-reveal reveal-on-scroll stagger-1 space-y-6"
-            data-reveal-id="contact-form"
+            className="contact-reveal opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 space-y-6"
           >
             <div className="grid md:grid-cols-2 gap-6">
-              <div>
+              <div className="contact-reveal opacity-0 translate-x-[-20px] transition-all duration-500 delay-300 [&.revealed]:opacity-100 [&.revealed]:translate-x-0">
                 <label htmlFor="fullName" className="block text-sm text-muted-foreground mb-2">
                   Full Name
                 </label>
@@ -98,7 +97,7 @@ export function ContactSection() {
                   placeholder="John Smith"
                 />
               </div>
-              <div>
+              <div className="contact-reveal opacity-0 translate-x-[20px] transition-all duration-500 delay-300 [&.revealed]:opacity-100 [&.revealed]:translate-x-0">
                 <label htmlFor="email" className="block text-sm text-muted-foreground mb-2">
                   Email Address
                 </label>
@@ -115,7 +114,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div>
+            <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-400 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
               <label htmlFor="phone" className="block text-sm text-muted-foreground mb-2">
                 Phone Number
               </label>
@@ -130,7 +129,7 @@ export function ContactSection() {
               />
             </div>
 
-            <div>
+            <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-500 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
               <label htmlFor="message" className="block text-sm text-muted-foreground mb-2">
                 Message
               </label>
@@ -146,36 +145,38 @@ export function ContactSection() {
               />
             </div>
 
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-foreground text-background font-medium rounded-sm hover:opacity-90 transition-all duration-300 disabled:opacity-50"
-            >
-              {isSubmitting ? (
-                "Sending..."
-              ) : submitted ? (
-                "Message Sent!"
-              ) : (
-                <>
-                  Send Message
-                  <Send size={18} />
-                </>
-              )}
-            </button>
+            <div className="contact-reveal opacity-0 scale-95 transition-all duration-500 delay-600 [&.revealed]:opacity-100 [&.revealed]:scale-100">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-foreground text-background font-medium rounded-sm hover:opacity-90 transition-all duration-300 disabled:opacity-50"
+              >
+                {isSubmitting ? (
+                  "Sending..."
+                ) : submitted ? (
+                  "Message Sent!"
+                ) : (
+                  <>
+                    Send Message
+                    <Send size={18} />
+                  </>
+                )}
+              </button>
+            </div>
           </form>
 
           {/* Contact Info */}
-          <div className="contact-reveal reveal-on-scroll stagger-2 mt-16 pt-12 border-t border-border" data-reveal-id="contact-info">
+          <div className="contact-reveal opacity-0 translate-y-8 transition-all duration-700 delay-700 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 mt-16 pt-12 border-t border-border">
             <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div>
+              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[800ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
                 <div className="text-sm text-muted-foreground mb-1">Email</div>
                 <div className="text-foreground">info@facadepro.com</div>
               </div>
-              <div>
+              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[900ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
                 <div className="text-sm text-muted-foreground mb-1">Phone</div>
                 <div className="text-foreground">+44 (0) 123 456 7890</div>
               </div>
-              <div>
+              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[1000ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
                 <div className="text-sm text-muted-foreground mb-1">Location</div>
                 <div className="text-foreground">London, United Kingdom</div>
               </div>

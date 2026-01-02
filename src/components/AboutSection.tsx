@@ -33,11 +33,13 @@ export function AboutSection() {
   }, []);
 
   return (
-    <section id="about" className="py-24 lg:py-32 bg-background">
+    <section id="about" className="py-24 lg:py-32 bg-background overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text Content */}
-          <div className="about-reveal reveal-on-scroll" data-reveal-id="about-text">
+          <div 
+            className="about-reveal opacity-0 translate-x-[-50px] transition-all duration-700 ease-out [&.revealed]:opacity-100 [&.revealed]:translate-x-0"
+          >
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-6">
               Building Excellence,
               <br />
@@ -65,15 +67,15 @@ export function AboutSection() {
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 mt-10 pt-10 border-t border-border">
-              <div>
+              <div className="about-reveal opacity-0 translate-y-4 transition-all duration-500 delay-300 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
                 <div className="text-2xl font-semibold text-foreground">20+</div>
                 <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
               </div>
-              <div>
+              <div className="about-reveal opacity-0 translate-y-4 transition-all duration-500 delay-500 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
                 <div className="text-2xl font-semibold text-foreground">500+</div>
                 <div className="text-sm text-muted-foreground mt-1">Projects Completed</div>
               </div>
-              <div>
+              <div className="about-reveal opacity-0 translate-y-4 transition-all duration-500 delay-700 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
                 <div className="text-2xl font-semibold text-foreground">100%</div>
                 <div className="text-sm text-muted-foreground mt-1">Client Satisfaction</div>
               </div>
@@ -81,12 +83,12 @@ export function AboutSection() {
           </div>
 
           {/* Image */}
-          <div className="about-reveal reveal-on-scroll stagger-2" data-reveal-id="about-image">
-            <div className="relative">
+          <div className="about-reveal opacity-0 translate-x-[50px] scale-95 transition-all duration-700 ease-out delay-200 [&.revealed]:opacity-100 [&.revealed]:translate-x-0 [&.revealed]:scale-100">
+            <div className="relative overflow-hidden rounded-sm group">
               <img
                 src={aboutImage}
                 alt="Modern facade construction"
-                className="w-full h-auto rounded-sm"
+                className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-sm" />
             </div>
