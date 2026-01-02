@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useTheme } from "@/hooks/useTheme";
+import logo from "@/assets/logo.jpg";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -48,9 +49,16 @@ export function Header() {
           <a 
             href="#home" 
             onClick={(e) => handleNavClick(e, "#home")}
-            className="text-xl font-semibold tracking-tight text-foreground"
+            className="flex items-center gap-3"
           >
-            FTRENDERING
+            <img 
+              src={logo} 
+              alt="FTRENDERING Logo" 
+              className="h-10 w-auto object-contain"
+            />
+            <span className="text-xl font-semibold tracking-tight text-foreground">
+              FTRENDERING
+            </span>
           </a>
 
           {/* Desktop Navigation */}
