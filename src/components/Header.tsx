@@ -14,8 +14,14 @@ const navLinks = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const activeSection = useActiveSection();
   const { isDark, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,9 +60,15 @@ export function Header() {
             <img 
               src={logo} 
               alt="FTRENDERING Logo" 
-              className="h-12 w-auto object-contain dark:invert"
+              className="h-16 w-auto object-contain dark:invert relative z-10"
             />
-            <span className="text-xl font-semibold tracking-tight text-foreground">
+            <span 
+              className={`text-xl font-semibold tracking-tight text-foreground transition-all duration-700 ease-out ${
+                isLoaded 
+                  ? "opacity-100 translate-x-0" 
+                  : "opacity-0 -translate-x-8"
+              }`}
+            >
               FTRENDERING
             </span>
           </a>
