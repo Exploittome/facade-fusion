@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useTheme } from "@/hooks/useTheme";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { href: "#home", label: "Home" },
