@@ -58,9 +58,25 @@ export function ServicesSection() {
     <section 
       id="services" 
       ref={sectionRef}
-      className="py-24 lg:py-32 bg-secondary overflow-hidden"
+      className="py-24 lg:py-32 bg-secondary overflow-hidden relative"
     >
-      <div className="container mx-auto px-6 lg:px-12">
+      {/* Decorative grid background */}
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
+              linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px'
+          }}
+        />
+      </div>
+      
+      {/* Gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/50 to-secondary pointer-events-none" />
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header with reveal */}
         <div 
           className={`text-center mb-16 lg:mb-20 transition-all duration-700 ease-out ${

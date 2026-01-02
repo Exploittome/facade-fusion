@@ -63,8 +63,33 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-secondary overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="contact" className="py-24 lg:py-32 bg-secondary overflow-hidden relative">
+      {/* Decorative diagonal lines background */}
+      <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.04]">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              repeating-linear-gradient(
+                45deg,
+                hsl(var(--foreground)) 0,
+                hsl(var(--foreground)) 1px,
+                transparent 1px,
+                transparent 80px
+              )
+            `
+          }}
+        />
+      </div>
+      
+      {/* Radial gradient spotlight */}
+      <div 
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at center, hsl(var(--accent) / 0.08) 0%, transparent 70%)'
+        }}
+      />
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-2xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12 contact-reveal opacity-0 translate-y-8 transition-all duration-700 ease-out [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
