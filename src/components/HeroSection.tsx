@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-facade.jpg";
+import heroImage from "@/assets/hero-facade.webp";
 
 export function HeroSection() {
   const handleScrollToContact = () => {
