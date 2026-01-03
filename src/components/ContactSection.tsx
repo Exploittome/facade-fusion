@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Send, Mail, Phone, MapPin } from "lucide-react";
+import { ContactSidePanel } from "./ContactSidePanel";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ export function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -198,73 +200,42 @@ export function ContactSection() {
             </div>
           </form>
 
-          {/* Contact Info - Interactive Icons */}
+          {/* Contact Info - Click to open side panel */}
           <div className="contact-reveal opacity-0 translate-y-8 transition-all duration-700 delay-700 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 mt-16 pt-12 border-t border-border">
             <div className="flex justify-center items-center gap-5 md:gap-8">
               {/* Email */}
-              <div className="group relative">
-                <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300">
-                  <Mail className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
-                </div>
-                {/* Expandable content */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 z-20">
-                  <div className="bg-card border border-border rounded-lg p-4 shadow-lg min-w-[200px] text-center">
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-card border-l border-t border-border rotate-45" />
-                    <div className="text-[10px] text-muted-foreground mb-1.5 uppercase tracking-wider">Email</div>
-                    <a 
-                      href="mailto:ftrendering2311@gmail.com" 
-                      className="text-foreground hover:text-accent transition-colors duration-300 text-sm"
-                    >
-                      ftrendering2311@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <button
+                onClick={() => setIsPanelOpen(true)}
+                className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300 group"
+                aria-label="Open contact info"
+              >
+                <Mail className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
+              </button>
 
               {/* Phone */}
-              <div className="group relative">
-                <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300">
-                  <Phone className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
-                </div>
-                {/* Expandable content */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 z-20">
-                  <div className="bg-card border border-border rounded-lg p-4 shadow-lg min-w-[160px] text-center">
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-card border-l border-t border-border rotate-45" />
-                    <div className="text-[10px] text-muted-foreground mb-1.5 uppercase tracking-wider">Phone</div>
-                    <a 
-                      href="tel:07886146544" 
-                      className="text-foreground hover:text-accent transition-colors duration-300 block text-sm"
-                    >
-                      07 886 146 544
-                    </a>
-                    <a 
-                      href="tel:07526748831" 
-                      className="text-foreground hover:text-accent transition-colors duration-300 block text-sm mt-0.5"
-                    >
-                      07 526 748 831
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <button
+                onClick={() => setIsPanelOpen(true)}
+                className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300 group"
+                aria-label="Open contact info"
+              >
+                <Phone className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
+              </button>
 
               {/* Location */}
-              <div className="group relative">
-                <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300">
-                  <MapPin className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
-                </div>
-                {/* Expandable content */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 z-20">
-                  <div className="bg-card border border-border rounded-lg p-4 shadow-lg min-w-[180px] text-center">
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-card border-l border-t border-border rotate-45" />
-                    <div className="text-[10px] text-muted-foreground mb-1.5 uppercase tracking-wider">Location</div>
-                    <div className="text-foreground text-sm">Liverpool, United Kingdom</div>
-                  </div>
-                </div>
-              </div>
+              <button
+                onClick={() => setIsPanelOpen(true)}
+                className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300 group"
+                aria-label="Open contact info"
+              >
+                <MapPin className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Side Panel */}
+      <ContactSidePanel isOpen={isPanelOpen} onClose={() => setIsPanelOpen(false)} />
     </section>
   );
 }
