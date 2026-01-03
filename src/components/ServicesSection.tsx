@@ -15,7 +15,7 @@ const services = [
   {
     icon: Thermometer,
     title: "Thermal Upgrades",
-    description: "Expert thermal retrofitting solutions to bring older buildings up to modern energy standards and improve comfort.",
+    description: "Complete removal of damaged or outdated render to ensure a solid base for new coatings.",
   },
 ];
 
