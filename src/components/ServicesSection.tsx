@@ -9,7 +9,7 @@ const services = [
   },
   {
     icon: Paintbrush,
-    title: "Facade Rendering",
+    title: "Silicone Render",
     description: "Premium render finishes that protect and beautify your building's exterior with long-lasting durability and exceptional quality.",
   },
   {
