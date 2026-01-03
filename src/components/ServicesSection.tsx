@@ -102,11 +102,11 @@ export function ServicesSection() {
         </div>
 
         {/* Services Grid - 3 Cards with staggered animation */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`group relative overflow-hidden rounded-sm border border-border bg-card cursor-pointer transition-all duration-700 ease-out ${
+              className={`group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-700 ease-out ${
                 isVisible 
                   ? 'opacity-100 translate-y-0 scale-100' 
                   : 'opacity-0 translate-y-16 scale-95'
@@ -117,69 +117,118 @@ export function ServicesSection() {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              {/* Animated background glow on reveal */}
+              {/* Card background with gradient border effect */}
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/20 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-[1px] rounded-lg bg-card" />
+              
+              {/* Animated corner accents */}
+              <div className="absolute top-0 left-0 w-12 h-12 overflow-hidden">
+                <div 
+                  className={`absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-accent to-transparent transition-all duration-700 ${
+                    isVisible ? 'translate-x-0' : '-translate-x-full'
+                  }`}
+                  style={{ transitionDelay: `${600 + index * 200}ms` }}
+                />
+                <div 
+                  className={`absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-accent to-transparent transition-all duration-700 ${
+                    isVisible ? 'translate-y-0' : '-translate-y-full'
+                  }`}
+                  style={{ transitionDelay: `${700 + index * 200}ms` }}
+                />
+              </div>
+              <div className="absolute bottom-0 right-0 w-12 h-12 overflow-hidden">
+                <div 
+                  className={`absolute bottom-0 right-0 w-full h-[2px] bg-gradient-to-l from-accent to-transparent transition-all duration-700 ${
+                    isVisible ? 'translate-x-0' : 'translate-x-full'
+                  }`}
+                  style={{ transitionDelay: `${600 + index * 200}ms` }}
+                />
+                <div 
+                  className={`absolute bottom-0 right-0 w-[2px] h-full bg-gradient-to-t from-accent to-transparent transition-all duration-700 ${
+                    isVisible ? 'translate-y-0' : 'translate-y-full'
+                  }`}
+                  style={{ transitionDelay: `${700 + index * 200}ms` }}
+                />
+              </div>
+
+              {/* Subtle glow effect on hover */}
               <div 
-                className={`absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent transition-opacity duration-1000 ${
-                  isVisible ? 'opacity-100' : 'opacity-0'
-                }`}
-                style={{ transitionDelay: `${500 + index * 200}ms` }}
+                className="absolute inset-0 rounded-lg transition-all duration-500 pointer-events-none"
+                style={{
+                  boxShadow: hoveredIndex === index 
+                    ? '0 20px 60px -15px hsl(var(--accent) / 0.3), 0 10px 30px -10px hsl(var(--accent) / 0.2)' 
+                    : '0 4px 20px -5px hsl(var(--background) / 0.5)'
+                }}
               />
 
-              {/* Card Content - Always visible */}
-              <div className="relative z-10 p-10 h-64 flex flex-col items-center justify-center text-center transition-all duration-500">
+              {/* Card Content */}
+              <div className="relative z-10 p-10 lg:p-12 h-72 flex flex-col items-center justify-center text-center">
+                {/* Icon container with background */}
                 <div 
-                  className={`mb-6 transition-all duration-500 ${
-                    hoveredIndex === index ? 'opacity-0 scale-75' : 'opacity-100 scale-100'
-                  } ${isVisible ? 'animate-none' : ''}`}
+                  className={`mb-8 relative transition-all duration-500 ${
+                    hoveredIndex === index ? 'opacity-0 scale-75 -translate-y-4' : 'opacity-100 scale-100 translate-y-0'
+                  }`}
                   style={{
                     animation: isVisible ? `iconPulse 0.6s ease-out ${600 + index * 200}ms both` : 'none'
                   }}
                 >
-                  <service.icon 
-                    size={48} 
-                    className="text-accent"
-                    strokeWidth={1.5}
-                  />
+                  <div className="absolute inset-0 rounded-full bg-accent/10 blur-xl scale-150" />
+                  <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/20 flex items-center justify-center">
+                    <service.icon 
+                      size={36} 
+                      className="text-accent"
+                      strokeWidth={1.5}
+                    />
+                  </div>
                 </div>
+                
                 <h3 
-                  className={`text-xl font-medium text-foreground transition-all duration-500 ${
+                  className={`text-xl lg:text-2xl font-medium text-foreground transition-all duration-500 ${
                     hoveredIndex === index ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'
                   }`}
                 >
                   {service.title}
                 </h3>
+                
+                {/* Subtle indicator */}
+                <div 
+                  className={`mt-6 flex items-center gap-2 text-sm text-muted-foreground transition-all duration-500 ${
+                    hoveredIndex === index ? 'opacity-0' : 'opacity-60 group-hover:opacity-100'
+                  }`}
+                >
+                  <span className="w-8 h-[1px] bg-accent/50" />
+                  <span>Hover for details</span>
+                  <span className="w-8 h-[1px] bg-accent/50" />
+                </div>
               </div>
 
               {/* Hover Overlay with Description */}
               <div 
-                className={`absolute inset-0 z-20 flex items-center justify-center p-8 bg-accent transition-all duration-500 ease-out ${
+                className={`absolute inset-0 z-20 flex items-center justify-center p-8 lg:p-10 rounded-lg transition-all duration-500 ease-out ${
                   hoveredIndex === index 
                     ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-full pointer-events-none'
+                    : 'opacity-0 translate-y-8 pointer-events-none'
                 }`}
+                style={{
+                  background: 'linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent) / 0.9) 100%)'
+                }}
               >
                 <div className="text-center">
-                  <service.icon 
-                    size={36} 
-                    className="text-background mx-auto mb-5"
-                    strokeWidth={1.5}
-                  />
-                  <h3 className="text-xl font-medium text-background mb-4">
+                  <div className="w-14 h-14 rounded-full bg-background/15 backdrop-blur-sm flex items-center justify-center mx-auto mb-6">
+                    <service.icon 
+                      size={28} 
+                      className="text-background"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-xl lg:text-2xl font-medium text-background mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-background/85 leading-relaxed max-w-xs mx-auto">
+                  <p className="text-sm lg:text-base text-background/90 leading-relaxed max-w-sm mx-auto">
                     {service.description}
                   </p>
                 </div>
               </div>
-
-              {/* Bottom accent line animation */}
-              <div 
-                className={`absolute bottom-0 left-0 h-0.5 bg-accent transition-all duration-700 ease-out ${
-                  isVisible ? 'w-full' : 'w-0'
-                }`}
-                style={{ transitionDelay: `${700 + index * 200}ms` }}
-              />
             </div>
           ))}
         </div>
