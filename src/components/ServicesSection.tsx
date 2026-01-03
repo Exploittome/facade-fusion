@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Layers, Paintbrush, Thermometer } from "lucide-react";
+import { Layers, PaintBucket, Hammer } from "lucide-react";
 
 const services = [
   {
@@ -8,12 +8,12 @@ const services = [
     description: "Comprehensive EWI systems that dramatically improve thermal performance and reduce energy costs for residential and commercial buildings.",
   },
   {
-    icon: Paintbrush,
+    icon: PaintBucket,
     title: "Silicone Render",
     description: "Silicone render is a modern façade solution that offers excellent water resistance, breathability, and long-lasting durability, helping protect your building while maintaining a clean, premium appearance.",
   },
   {
-    icon: Thermometer,
+    icon: Hammer,
     title: "Old Render Removal",
     description: "Safe and efficient removal of old render, preparing surfaces for a new, durable finish.",
   },
