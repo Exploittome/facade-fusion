@@ -140,79 +140,67 @@ export function ContactSection() {
               className="relative z-10 p-8 lg:p-10 space-y-6"
             >
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="contact-reveal opacity-0 translate-x-[-20px] transition-all duration-500 delay-300 [&.revealed]:opacity-100 [&.revealed]:translate-x-0 group">
-                  <label htmlFor="fullName" className="block text-sm font-medium text-foreground mb-3 transition-colors duration-300">
+                <div className="contact-reveal opacity-0 translate-x-[-20px] transition-all duration-500 delay-300 [&.revealed]:opacity-100 [&.revealed]:translate-x-0">
+                  <label htmlFor="fullName" className="block text-sm font-medium text-foreground mb-3">
                     Full Name
                   </label>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      id="fullName"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-4 bg-background/50 border-2 border-border rounded-lg text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent focus:bg-background transition-all duration-300"
-                      placeholder="John Smith"
-                    />
-                    <div className="absolute inset-0 rounded-lg bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                  </div>
-                </div>
-                <div className="contact-reveal opacity-0 translate-x-[20px] transition-all duration-500 delay-300 [&.revealed]:opacity-100 [&.revealed]:translate-x-0 group">
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-3 transition-colors duration-300">
-                    Email Address
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-4 bg-background/50 border-2 border-border rounded-lg text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent focus:bg-background transition-all duration-300"
-                      placeholder="john@example.com"
-                    />
-                    <div className="absolute inset-0 rounded-lg bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-400 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 group">
-                <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-3 transition-colors duration-300">
-                  Phone Number
-                </label>
-                <div className="relative">
                   <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-4 bg-background/50 border-2 border-border rounded-lg text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent focus:bg-background transition-all duration-300"
-                    placeholder="+44 123 456 7890"
-                  />
-                  <div className="absolute inset-0 rounded-lg bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                </div>
-              </div>
-
-              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-500 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 group">
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-3 transition-colors duration-300">
-                  Message
-                </label>
-                <div className="relative">
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
                     onChange={handleChange}
                     required
-                    rows={5}
-                    className="w-full px-4 py-4 bg-background/50 border-2 border-border rounded-lg text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent focus:bg-background transition-all duration-300 resize-none"
-                    placeholder="Tell us about your project..."
+                    className="w-full px-4 py-4 bg-background/50 border-2 border-border rounded-lg text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent focus:bg-background hover:border-accent/50 transition-all duration-300"
+                    placeholder="John Smith"
                   />
-                  <div className="absolute inset-0 rounded-lg bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                 </div>
+                <div className="contact-reveal opacity-0 translate-x-[20px] transition-all duration-500 delay-300 [&.revealed]:opacity-100 [&.revealed]:translate-x-0">
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-3">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-4 bg-background/50 border-2 border-border rounded-lg text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent focus:bg-background hover:border-accent/50 transition-all duration-300"
+                    placeholder="john@example.com"
+                  />
+                </div>
+              </div>
+
+              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-400 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
+                <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-3">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-4 bg-background/50 border-2 border-border rounded-lg text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent focus:bg-background hover:border-accent/50 transition-all duration-300"
+                  placeholder="+44 123 456 7890"
+                />
+              </div>
+
+              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-500 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
+                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-3">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full px-4 py-4 bg-background/50 border-2 border-border rounded-lg text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent focus:bg-background hover:border-accent/50 transition-all duration-300 resize-none"
+                  placeholder="Tell us about your project..."
+                />
               </div>
 
               <div className="contact-reveal opacity-0 scale-95 transition-all duration-500 delay-600 [&.revealed]:opacity-100 [&.revealed]:scale-100 pt-2">
