@@ -203,15 +203,16 @@ export function ContactSection() {
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[800ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
                 <div className="text-sm text-muted-foreground mb-1">Email</div>
-                <div className="text-foreground">info@facadepro.com</div>
+                <div className="text-foreground">FTRENDERING2311@GMAIL.COM</div>
               </div>
               <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[900ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
                 <div className="text-sm text-muted-foreground mb-1">Phone</div>
-                <div className="text-foreground">+44 (0) 123 456 7890</div>
+                <div className="text-foreground">07 886 146 544</div>
+                <div className="text-foreground">07 526 748 831</div>
               </div>
               <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[1000ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
                 <div className="text-sm text-muted-foreground mb-1">Location</div>
-                <div className="text-foreground">London, United Kingdom</div>
+                <div className="text-foreground">Liverpool, United Kingdom</div>
               </div>
             </div>
           </div>
