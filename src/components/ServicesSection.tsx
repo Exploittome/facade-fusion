@@ -10,7 +10,7 @@ const services = [
   {
     icon: Paintbrush,
     title: "Silicone Render",
-    description: "Silicone Render is an advanced solution for enhancing the exterior appearance and durability of your home. At FTRENDERING, our skilled team excels in applying high-quality Silicone Render that provides a breathable, weather-resistant finish.",
+    description: "Silicone Render is an advanced solution for enhancing the exterior appearance and durability of your home. At FT, our skilled team excels in applying high-quality Silicone Render that provides a breathable, weather-resistant finish.",
   },
   {
     icon: Thermometer,
