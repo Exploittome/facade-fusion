@@ -10,7 +10,7 @@ const services = [
   {
     icon: Paintbrush,
     title: "Silicone Render",
-    description: "Premium render finishes that protect and beautify your building's exterior with long-lasting durability and exceptional quality.",
+    description: "Silicone Render is an advanced solution for enhancing the exterior appearance and durability of your home. At FTRENDERING, our skilled team excels in applying high-quality Silicone Render that provides a breathable, weather-resistant finish.",
   },
   {
     icon: Thermometer,
