@@ -14,7 +14,7 @@ const services = [
   },
   {
     icon: Thermometer,
-    title: "Thermal Upgrades",
+    title: "Old Render Removal",
     description: "Complete removal of damaged or outdated render to ensure a solid base for new coatings.",
   },
 ];
