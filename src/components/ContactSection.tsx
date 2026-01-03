@@ -200,20 +200,20 @@ export function ContactSection() {
 
           {/* Contact Info - Interactive Icons */}
           <div className="contact-reveal opacity-0 translate-y-8 transition-all duration-700 delay-700 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 mt-16 pt-12 border-t border-border">
-            <div className="flex justify-center items-center gap-8 md:gap-12">
+            <div className="flex justify-center items-center gap-5 md:gap-8">
               {/* Email */}
               <div className="group relative">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-background dark:bg-foreground border-2 border-foreground/20 dark:border-background/20 flex items-center justify-center cursor-pointer hover:scale-110 hover:shadow-lg transition-all duration-300">
-                  <Mail className="w-7 h-7 md:w-8 md:h-8 text-foreground dark:text-background" />
+                <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300">
+                  <Mail className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
                 </div>
                 {/* Expandable content */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-20">
-                  <div className="bg-background dark:bg-foreground border border-border dark:border-background/20 rounded-xl p-5 shadow-2xl min-w-[240px] text-center">
-                    <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-5 h-5 bg-background dark:bg-foreground border-l border-t border-border dark:border-background/20 rotate-45" />
-                    <div className="text-xs text-muted-foreground dark:text-background/60 mb-2 uppercase tracking-widest font-medium">Email</div>
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 z-20">
+                  <div className="bg-card border border-border rounded-lg p-4 shadow-lg min-w-[200px] text-center">
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-card border-l border-t border-border rotate-45" />
+                    <div className="text-[10px] text-muted-foreground mb-1.5 uppercase tracking-wider">Email</div>
                     <a 
                       href="mailto:ftrendering2311@gmail.com" 
-                      className="text-foreground dark:text-background hover:text-accent transition-colors duration-300 text-sm font-semibold"
+                      className="text-foreground hover:text-accent transition-colors duration-300 text-sm"
                     >
                       ftrendering2311@gmail.com
                     </a>
@@ -223,23 +223,23 @@ export function ContactSection() {
 
               {/* Phone */}
               <div className="group relative">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-background dark:bg-foreground border-2 border-foreground/20 dark:border-background/20 flex items-center justify-center cursor-pointer hover:scale-110 hover:shadow-lg transition-all duration-300">
-                  <Phone className="w-7 h-7 md:w-8 md:h-8 text-foreground dark:text-background" />
+                <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300">
+                  <Phone className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
                 </div>
                 {/* Expandable content */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-20">
-                  <div className="bg-background dark:bg-foreground border border-border dark:border-background/20 rounded-xl p-5 shadow-2xl min-w-[200px] text-center">
-                    <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-5 h-5 bg-background dark:bg-foreground border-l border-t border-border dark:border-background/20 rotate-45" />
-                    <div className="text-xs text-muted-foreground dark:text-background/60 mb-2 uppercase tracking-widest font-medium">Phone</div>
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 z-20">
+                  <div className="bg-card border border-border rounded-lg p-4 shadow-lg min-w-[160px] text-center">
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-card border-l border-t border-border rotate-45" />
+                    <div className="text-[10px] text-muted-foreground mb-1.5 uppercase tracking-wider">Phone</div>
                     <a 
                       href="tel:07886146544" 
-                      className="text-foreground dark:text-background hover:text-accent transition-colors duration-300 block font-semibold"
+                      className="text-foreground hover:text-accent transition-colors duration-300 block text-sm"
                     >
                       07 886 146 544
                     </a>
                     <a 
                       href="tel:07526748831" 
-                      className="text-foreground dark:text-background hover:text-accent transition-colors duration-300 block mt-1 font-semibold"
+                      className="text-foreground hover:text-accent transition-colors duration-300 block text-sm mt-0.5"
                     >
                       07 526 748 831
                     </a>
@@ -249,15 +249,15 @@ export function ContactSection() {
 
               {/* Location */}
               <div className="group relative">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-background dark:bg-foreground border-2 border-foreground/20 dark:border-background/20 flex items-center justify-center cursor-pointer hover:scale-110 hover:shadow-lg transition-all duration-300">
-                  <MapPin className="w-7 h-7 md:w-8 md:h-8 text-foreground dark:text-background" />
+                <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300">
+                  <MapPin className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
                 </div>
                 {/* Expandable content */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-20">
-                  <div className="bg-background dark:bg-foreground border border-border dark:border-background/20 rounded-xl p-5 shadow-2xl min-w-[220px] text-center">
-                    <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-5 h-5 bg-background dark:bg-foreground border-l border-t border-border dark:border-background/20 rotate-45" />
-                    <div className="text-xs text-muted-foreground dark:text-background/60 mb-2 uppercase tracking-widest font-medium">Location</div>
-                    <div className="text-foreground dark:text-background font-semibold">Liverpool, United Kingdom</div>
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 z-20">
+                  <div className="bg-card border border-border rounded-lg p-4 shadow-lg min-w-[180px] text-center">
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-card border-l border-t border-border rotate-45" />
+                    <div className="text-[10px] text-muted-foreground mb-1.5 uppercase tracking-wider">Location</div>
+                    <div className="text-foreground text-sm">Liverpool, United Kingdom</div>
                   </div>
                 </div>
               </div>
