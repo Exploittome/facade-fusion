@@ -3,36 +3,43 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
+import portfolio1 from "@/assets/portfolio-1.jpg";
+import portfolio2 from "@/assets/portfolio-2.jpg";
+import portfolio3 from "@/assets/portfolio-3.jpg";
+import portfolio4 from "@/assets/portfolio-4.jpg";
+import portfolio5 from "@/assets/portfolio-5.jpg";
+import portfolio6 from "@/assets/portfolio-6.jpg";
+
 const portfolioItems = [
   {
-    title: "Residential Complex",
+    title: "Victorian Terraced House",
+    category: "Silicone Render",
+    image: portfolio1,
+  },
+  {
+    title: "Semi-Detached Family Home",
     category: "External Insulation",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop",
+    image: portfolio2,
   },
   {
-    title: "Office Building",
-    category: "Facade Renovation",
-    image: "https://images.unsplash.com/photo-1545324418-cc6a8b6347c2?w=600&h=400&fit=crop",
-  },
-  {
-    title: "Commercial Center",
-    category: "Thermal Insulation",
-    image: "https://images.unsplash.com/photo-1464938050520-ef2571923d20?w=600&h=400&fit=crop",
-  },
-  {
-    title: "Private Villa",
+    title: "Modern Detached House",
     category: "Complete Facade",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop",
+    image: portfolio3,
   },
   {
-    title: "Apartment Block",
-    category: "Wall Insulation",
-    image: "https://images.unsplash.com/photo-1545324418-cc6a8b6347c2?w=600&h=400&fit=crop",
+    title: "Traditional Cottage",
+    category: "Thermal Insulation",
+    image: portfolio4,
   },
   {
-    title: "Modern House",
-    category: "External Cladding",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop",
+    title: "Liverpool Townhouses",
+    category: "Facade Renovation",
+    image: portfolio5,
+  },
+  {
+    title: "Georgian Manor",
+    category: "Premium Render",
+    image: portfolio6,
   },
 ];
 
