@@ -10,7 +10,7 @@ const services = [
   {
     icon: Paintbrush,
     title: "Silicone Render",
-    description: "Silicone Render is an advanced solution for enhancing the exterior appearance and durability of your home. At FT, our skilled team excels in applying high-quality Silicone Render that provides a breathable, weather-resistant finish.",
+    description: "Silicone render is a modern façade solution that offers excellent water resistance, breathability, and long-lasting durability, helping protect your building while maintaining a clean, premium appearance.",
   },
   {
     icon: Thermometer,
