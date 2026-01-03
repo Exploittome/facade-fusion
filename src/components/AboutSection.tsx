@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import aboutImage from "@/assets/about-facade.jpg";
+import aboutImage from "@/assets/about-workers.jpg";
 
 export function AboutSection() {
   useEffect(() => {
@@ -87,7 +87,7 @@ export function AboutSection() {
             <div className="relative overflow-hidden rounded-sm group">
               <img
                 src={aboutImage}
-                alt="Modern facade construction"
+                alt="Construction workers installing external wall insulation"
                 className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-sm" />
