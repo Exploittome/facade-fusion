@@ -47,9 +47,8 @@ export function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-background/0 backdrop-blur-none"
+          : "bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm"
       }`}
-      style={{ backgroundColor: isScrolled ? undefined : 'transparent' }}
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
@@ -62,14 +61,14 @@ export function Header() {
             <img 
               src={logo} 
               alt="FTRENDERING Logo" 
-              className="h-16 w-auto object-contain dark:invert relative z-10"
+              className="h-16 w-auto object-contain dark:invert dark:brightness-100 brightness-0 relative z-10"
             />
             <span 
-              className={`text-xl font-semibold tracking-tight text-foreground transition-all duration-700 ease-out ${
+              className={`text-xl font-semibold tracking-tight transition-all duration-700 ease-out ${
                 isLoaded 
                   ? "opacity-100 translate-x-0" 
                   : "opacity-0 -translate-x-8"
-              }`}
+              } ${isScrolled ? "text-foreground" : "text-foreground dark:text-foreground"}`}
             >
               FTRENDERING
             </span>
@@ -84,8 +83,8 @@ export function Header() {
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`text-sm font-medium transition-colors duration-300 relative group ${
                   activeSection === link.href.slice(1)
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-foreground font-semibold"
+                    : "text-foreground/70 hover:text-foreground"
                 }`}
               >
                 {link.label}
@@ -102,7 +101,7 @@ export function Header() {
           <div className="flex items-center gap-4">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className="p-2 rounded-full text-foreground/70 hover:text-foreground hover:bg-foreground/10 transition-all duration-300"
               aria-label="Toggle theme"
             >
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
@@ -110,7 +109,7 @@ export function Header() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-foreground"
+              className="md:hidden p-2 text-foreground hover:bg-foreground/10 rounded-full transition-all duration-300"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -133,8 +132,8 @@ export function Header() {
               onClick={(e) => handleNavClick(e, link.href)}
               className={`text-sm font-medium py-2 transition-colors duration-300 ${
                 activeSection === link.href.slice(1)
-                  ? "text-foreground"
-                  : "text-muted-foreground"
+                  ? "text-foreground font-semibold"
+                  : "text-foreground/70"
               }`}
             >
               {link.label}
