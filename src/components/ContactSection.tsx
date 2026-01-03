@@ -206,28 +206,28 @@ export function ContactSection() {
               {/* Email */}
               <button
                 onClick={() => setIsPanelOpen(true)}
-                className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300 group"
+                className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-background border-2 border-foreground/80 flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300 group"
                 aria-label="Open contact info"
               >
-                <Mail className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
+                <Mail className="w-5 h-5 text-foreground/80 group-hover:text-foreground transition-colors duration-300" />
               </button>
 
               {/* Phone */}
               <button
                 onClick={() => setIsPanelOpen(true)}
-                className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300 group"
+                className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-background border-2 border-foreground/80 flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300 group"
                 aria-label="Open contact info"
               >
-                <Phone className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
+                <Phone className="w-5 h-5 text-foreground/80 group-hover:text-foreground transition-colors duration-300" />
               </button>
 
               {/* Location */}
               <button
                 onClick={() => setIsPanelOpen(true)}
-                className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-muted/50 border border-border flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300 group"
+                className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-background border-2 border-foreground/80 flex items-center justify-center cursor-pointer hover:bg-muted hover:scale-105 transition-all duration-300 group"
                 aria-label="Open contact info"
               >
-                <MapPin className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
+                <MapPin className="w-5 h-5 text-foreground/80 group-hover:text-foreground transition-colors duration-300" />
               </button>
             </div>
           </div>
