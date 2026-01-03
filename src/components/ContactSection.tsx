@@ -111,91 +111,85 @@ export function ContactSection() {
             </p>
           </div>
 
-          {/* Minimalist Contact Form */}
-          <form 
-            onSubmit={handleSubmit} 
-            className="contact-reveal opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 space-y-8"
-          >
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-300 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
-                <label htmlFor="fullName" className="block text-xs uppercase tracking-wider text-muted-foreground mb-3">
-                  Full Name
+          {/* Minimalist Contact Form with Card */}
+          <div className="contact-reveal opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 bg-card border border-border rounded-lg p-8 lg:p-10">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-300 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
+                  <label htmlFor="fullName" className="block text-sm text-muted-foreground mb-2">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors duration-300"
+                    placeholder="John Smith"
+                  />
+                </div>
+                <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-400 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
+                  <label htmlFor="email" className="block text-sm text-muted-foreground mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors duration-300"
+                    placeholder="john@example.com"
+                  />
+                </div>
+              </div>
+
+              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-500 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
+                <label htmlFor="phone" className="block text-sm text-muted-foreground mb-2">
+                  Phone Number
                 </label>
                 <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
                   onChange={handleChange}
-                  required
-                  className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
-                  placeholder="John Smith"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors duration-300"
+                  placeholder="+44 123 456 7890"
                 />
               </div>
-              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-400 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
-                <label htmlFor="email" className="block text-xs uppercase tracking-wider text-muted-foreground mb-3">
-                  Email Address
+
+              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-600 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
+                <label htmlFor="message" className="block text-sm text-muted-foreground mb-2">
+                  Message
                 </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
-                  placeholder="john@example.com"
+                  rows={5}
+                  className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors duration-300 resize-none"
+                  placeholder="Tell us about your project..."
                 />
               </div>
-            </div>
 
-            <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-500 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
-              <label htmlFor="phone" className="block text-xs uppercase tracking-wider text-muted-foreground mb-3">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
-                placeholder="+44 123 456 7890"
-              />
-            </div>
-
-            <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-600 [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
-              <label htmlFor="message" className="block text-xs uppercase tracking-wider text-muted-foreground mb-3">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 resize-none"
-                placeholder="Tell us about your project..."
-              />
-            </div>
-
-            <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-700 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 pt-4">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="group flex items-center gap-3 px-0 py-2 bg-transparent text-foreground font-medium transition-all duration-300 disabled:opacity-50"
-              >
-                <span className="relative">
+              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-700 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 pt-2">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-accent text-background font-medium rounded-sm hover:bg-accent/90 transition-colors duration-300 disabled:opacity-50"
+                >
                   {isSubmitting ? "Sending..." : submitted ? "Message Sent!" : "Send Message"}
-                  <span className="absolute left-0 -bottom-1 w-full h-px bg-accent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-                </span>
-                {!isSubmitting && !submitted && (
-                  <Send size={16} className="text-accent group-hover:translate-x-1 transition-transform duration-300" />
-                )}
-              </button>
-            </div>
-          </form>
+                  {!isSubmitting && !submitted && <Send size={18} />}
+                </button>
+              </div>
+            </form>
+          </div>
 
           {/* Contact Info - Click to open side panel */}
           <div className="contact-reveal opacity-0 translate-y-8 transition-all duration-700 delay-700 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 mt-16 pt-12 border-t border-border">
