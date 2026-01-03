@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Send } from "lucide-react";
+import { Send, Mail, Phone, MapPin } from "lucide-react";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -200,19 +200,40 @@ export function ContactSection() {
 
           {/* Contact Info */}
           <div className="contact-reveal opacity-0 translate-y-8 transition-all duration-700 delay-700 [&.revealed]:opacity-100 [&.revealed]:translate-y-0 mt-16 pt-12 border-t border-border">
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[800ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
-                <div className="text-sm text-muted-foreground mb-1">Email</div>
-                <div className="text-foreground">FTRENDERING2311@GMAIL.COM</div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[800ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0 group">
+                <div className="flex flex-col items-center p-6 rounded-lg bg-card/50 border border-border/50 hover:border-accent/30 hover:bg-card transition-all duration-300">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors duration-300">
+                    <Mail className="w-5 h-5 text-accent" />
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-2">Email</div>
+                  <a href="mailto:ftrendering2311@gmail.com" className="text-foreground hover:text-accent transition-colors duration-300 text-sm">
+                    ftrendering2311@gmail.com
+                  </a>
+                </div>
               </div>
-              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[900ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
-                <div className="text-sm text-muted-foreground mb-1">Phone</div>
-                <div className="text-foreground">07 886 146 544</div>
-                <div className="text-foreground">07 526 748 831</div>
+              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[900ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0 group">
+                <div className="flex flex-col items-center p-6 rounded-lg bg-card/50 border border-border/50 hover:border-accent/30 hover:bg-card transition-all duration-300">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors duration-300">
+                    <Phone className="w-5 h-5 text-accent" />
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-2">Phone</div>
+                  <a href="tel:07886146544" className="text-foreground hover:text-accent transition-colors duration-300">
+                    07 886 146 544
+                  </a>
+                  <a href="tel:07526748831" className="text-foreground hover:text-accent transition-colors duration-300 mt-1">
+                    07 526 748 831
+                  </a>
+                </div>
               </div>
-              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[1000ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0">
-                <div className="text-sm text-muted-foreground mb-1">Location</div>
-                <div className="text-foreground">Liverpool, United Kingdom</div>
+              <div className="contact-reveal opacity-0 translate-y-4 transition-all duration-500 delay-[1000ms] [&.revealed]:opacity-100 [&.revealed]:translate-y-0 group">
+                <div className="flex flex-col items-center p-6 rounded-lg bg-card/50 border border-border/50 hover:border-accent/30 hover:bg-card transition-all duration-300">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors duration-300">
+                    <MapPin className="w-5 h-5 text-accent" />
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-2">Location</div>
+                  <div className="text-foreground">Liverpool, United Kingdom</div>
+                </div>
               </div>
             </div>
           </div>
