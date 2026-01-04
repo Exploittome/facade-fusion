@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 import portfolio1 from "@/assets/portfolio-1.jpg";
@@ -213,9 +213,6 @@ export const PortfolioSection = () => {
                         {/* Subtle dark overlay */}
                         <div className="absolute inset-0 bg-background/15 pointer-events-none" />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                          <ArrowRight className="w-5 h-5 text-primary" />
-                        </div>
                       </div>
                       <div className="p-4">
                         <span className="text-xs uppercase tracking-wider text-primary/70">
