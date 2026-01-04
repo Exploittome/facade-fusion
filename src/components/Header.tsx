@@ -49,8 +49,8 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+        <div className="relative flex items-center h-20">
+          {/* Logo - Left */}
           <a 
             href="#home" 
             onClick={(e) => handleNavClick(e, "#home")}
@@ -72,8 +72,8 @@ export function Header() {
             </span>
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Center */}
+          <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -95,10 +95,10 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Right */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:bg-foreground/10 rounded-full transition-all duration-300"
+            className="md:hidden p-2 text-foreground hover:bg-foreground/10 rounded-full transition-all duration-300 ml-auto"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
