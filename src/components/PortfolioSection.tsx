@@ -9,6 +9,7 @@ import portfolio3 from "@/assets/portfolio-3.jpg";
 import portfolio4 from "@/assets/portfolio-4.jpg";
 import portfolio5 from "@/assets/portfolio-5.jpg";
 import portfolio6 from "@/assets/portfolio-6.jpg";
+import portfolio7 from "@/assets/portfolio-7.jpg";
 
 const portfolioItems = [
   {
@@ -17,29 +18,34 @@ const portfolioItems = [
     image: portfolio1,
   },
   {
-    title: "Semi-Detached Family Home",
+    title: "Detached Family Home",
     category: "External Insulation",
     image: portfolio2,
   },
   {
-    title: "Modern Detached House",
+    title: "Semi-Detached Residence",
     category: "Complete Facade",
     image: portfolio3,
   },
   {
-    title: "Traditional Cottage",
-    category: "Thermal Insulation",
+    title: "Modern Semi-Detached",
+    category: "Facade Renovation",
     image: portfolio4,
   },
   {
-    title: "Liverpool Townhouses",
-    category: "Facade Renovation",
+    title: "Contemporary House",
+    category: "Premium Render",
     image: portfolio5,
   },
   {
-    title: "Georgian Manor",
-    category: "Premium Render",
+    title: "Detached Property",
+    category: "Silicone Render",
     image: portfolio6,
+  },
+  {
+    title: "Georgian Style Home",
+    category: "External Insulation",
+    image: portfolio7,
   },
 ];
 
