@@ -121,35 +121,6 @@ export function ServicesSection() {
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/20 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute inset-[1px] rounded-lg bg-card" />
               
-              {/* Animated corner accents */}
-              <div className="absolute top-0 left-0 w-12 h-12 overflow-hidden">
-                <div 
-                  className={`absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-accent to-transparent transition-all duration-700 ${
-                    isVisible ? 'translate-x-0' : '-translate-x-full'
-                  }`}
-                  style={{ transitionDelay: `${600 + index * 200}ms` }}
-                />
-                <div 
-                  className={`absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-accent to-transparent transition-all duration-700 ${
-                    isVisible ? 'translate-y-0' : '-translate-y-full'
-                  }`}
-                  style={{ transitionDelay: `${700 + index * 200}ms` }}
-                />
-              </div>
-              <div className="absolute bottom-0 right-0 w-12 h-12 overflow-hidden">
-                <div 
-                  className={`absolute bottom-0 right-0 w-full h-[2px] bg-gradient-to-l from-accent to-transparent transition-all duration-700 ${
-                    isVisible ? 'translate-x-0' : 'translate-x-full'
-                  }`}
-                  style={{ transitionDelay: `${600 + index * 200}ms` }}
-                />
-                <div 
-                  className={`absolute bottom-0 right-0 w-[2px] h-full bg-gradient-to-t from-accent to-transparent transition-all duration-700 ${
-                    isVisible ? 'translate-y-0' : 'translate-y-full'
-                  }`}
-                  style={{ transitionDelay: `${700 + index * 200}ms` }}
-                />
-              </div>
 
               {/* Subtle glow effect on hover */}
               <div 
