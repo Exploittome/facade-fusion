@@ -169,3 +169,20 @@
 .reveal-on-scroll.revealed {
   animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+
+/* Header hairline fix: cover 1px seam during scroll */
+[data-site-header] {
+  border-bottom: 0;
+  box-shadow: none;
+}
+
+[data-site-header]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: hsl(var(--background));
+  pointer-events: none;
+}
