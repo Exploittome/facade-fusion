@@ -10,6 +10,12 @@ import portfolio4 from "@/assets/portfolio-4.jpg";
 import portfolio5 from "@/assets/portfolio-5.jpg";
 import portfolio6 from "@/assets/portfolio-6.jpg";
 import portfolio7 from "@/assets/portfolio-7.jpg";
+import portfolio8 from "@/assets/portfolio-8.jpg";
+import portfolio9 from "@/assets/portfolio-9.jpg";
+import portfolio10 from "@/assets/portfolio-10.jpg";
+import portfolio11 from "@/assets/portfolio-11.jpg";
+import portfolio12 from "@/assets/portfolio-12.jpg";
+import portfolio13 from "@/assets/portfolio-13.jpg";
 
 const portfolioItems = [
   {
@@ -46,6 +52,36 @@ const portfolioItems = [
     title: "Georgian Style Home",
     category: "External Insulation",
     image: portfolio7,
+  },
+  {
+    title: "Classic Semi-Detached",
+    category: "Silicone Render",
+    image: portfolio8,
+  },
+  {
+    title: "Victorian Double Front",
+    category: "Premium Render",
+    image: portfolio9,
+  },
+  {
+    title: "Terraced House Row",
+    category: "Complete Facade",
+    image: portfolio10,
+  },
+  {
+    title: "Country Cottage",
+    category: "External Insulation",
+    image: portfolio11,
+  },
+  {
+    title: "Modern Bungalow",
+    category: "Silicone Render",
+    image: portfolio12,
+  },
+  {
+    title: "Single Storey Home",
+    category: "Facade Renovation",
+    image: portfolio13,
   },
 ];
 
