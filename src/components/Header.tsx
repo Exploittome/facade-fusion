@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useActiveSection } from "@/hooks/useActiveSection";
-import { useTheme } from "@/hooks/useTheme";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
@@ -17,7 +16,6 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const activeSection = useActiveSection();
-  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 100);
@@ -97,24 +95,14 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Theme Toggle & Mobile Menu Button */}
-          <div className="flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full text-foreground/70 hover:text-foreground hover:bg-foreground/10 transition-all duration-300"
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-foreground hover:bg-foreground/10 rounded-full transition-all duration-300"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-foreground hover:bg-foreground/10 rounded-full transition-all duration-300"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
