@@ -79,7 +79,7 @@ const portfolioItems = [
     image: portfolio12,
   },
   {
-    title: "Single Storey Home",
+    title: "Detached Bungalow",
     category: "EWI + silicone render",
     image: portfolio13,
   },
