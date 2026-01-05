@@ -49,7 +49,7 @@ const portfolioItems = [
     image: portfolio6,
   },
   {
-    title: "Georgian Style Home",
+    title: "Semi-Detached House",
     category: "External Insulation",
     image: portfolio7,
   },
