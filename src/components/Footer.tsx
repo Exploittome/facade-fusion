@@ -32,7 +32,7 @@ export function Footer() {
           
           {/* Copyright - centered */}
           <div className="text-sm text-muted-foreground">
-            © 2025 FTRENDERING LTD
+            © 2023 FTRENDERING LTD
           </div>
           
           {/* Social icons - right */}
