@@ -25,7 +25,7 @@ const portfolioItems = [
   },
   {
     title: "Detached Family House",
-    category: "External Insulation",
+    category: "Silicone Render",
     image: portfolio2,
   },
   {
