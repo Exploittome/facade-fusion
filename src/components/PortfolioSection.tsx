@@ -29,7 +29,7 @@ const portfolioItems = [
     image: portfolio2,
   },
   {
-    title: "Semi-Detached Residence",
+    title: "Semi-Detached House",
     category: "Complete Facade",
     image: portfolio3,
   },
