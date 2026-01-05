@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { Send, Mail, Phone, MapPin } from "lucide-react";
 import { ContactSidePanel } from "./ContactSidePanel";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 export function ContactSection() {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -54,14 +57,31 @@ export function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ fullName: "", email: "", phone: "", message: "" });
-    
-    setTimeout(() => setSubmitted(false), 5000);
+    try {
+      const { data, error } = await supabase.functions.invoke('send-telegram', {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      setSubmitted(true);
+      setFormData({ fullName: "", email: "", phone: "", message: "" });
+      toast({
+        title: "Повідомлення надіслано!",
+        description: "Ми зв'яжемося з вами найближчим часом.",
+      });
+      
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Помилка",
+        description: "Не вдалося надіслати повідомлення. Спробуйте ще раз.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
