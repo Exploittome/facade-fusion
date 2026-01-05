@@ -24,7 +24,7 @@ const portfolioItems = [
     image: portfolio1,
   },
   {
-    title: "Detached Family Home",
+    title: "Detached Family House",
     category: "External Insulation",
     image: portfolio2,
   },
