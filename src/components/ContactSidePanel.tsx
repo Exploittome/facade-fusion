@@ -49,7 +49,7 @@ export function ContactSidePanel({
                   +44 7886 146 544
                 </a>
                 <a href="tel:07526748831" className="text-foreground hover:text-accent transition-colors duration-200 block text-sm font-medium mt-1">
-                  07 526 748 831
+                  +44 7526 748 831
                 </a>
               </div>
             </div>
