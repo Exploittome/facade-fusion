@@ -80,7 +80,7 @@ const portfolioItems = [
   },
   {
     title: "Single Storey Home",
-    category: "Facade Renovation",
+    category: "EWI + silicone render",
     image: portfolio13,
   },
 ];
