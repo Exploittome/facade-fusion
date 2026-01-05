@@ -65,7 +65,7 @@ const portfolioItems = [
   },
   {
     title: "Terraced House Row",
-    category: "Complete Facade",
+    category: "EWI + silicone render",
     image: portfolio10,
   },
   {
