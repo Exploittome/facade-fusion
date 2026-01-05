@@ -64,7 +64,7 @@ const portfolioItems = [
     image: portfolio9,
   },
   {
-    title: "Terraced House Row",
+    title: "Terraced House",
     category: "EWI + silicone render",
     image: portfolio10,
   },
