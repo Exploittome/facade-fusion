@@ -1,33 +1,20 @@
 import { X, Mail, Phone, MapPin } from "lucide-react";
-
 interface ContactSidePanelProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
-export function ContactSidePanel({ isOpen, onClose }: ContactSidePanelProps) {
-  return (
-    <>
+export function ContactSidePanel({
+  isOpen,
+  onClose
+}: ContactSidePanelProps) {
+  return <>
       {/* Backdrop */}
-      <div 
-        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-50 transition-opacity duration-300 ${
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={onClose}
-      />
+      <div className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-50 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={onClose} />
       
       {/* Side Panel */}
-      <div 
-        className={`fixed top-0 right-0 h-full w-80 md:w-96 bg-card border-l border-border shadow-2xl z-50 transition-transform duration-300 ease-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
+      <div className={`fixed top-0 right-0 h-full w-80 md:w-96 bg-card border-l border-border shadow-2xl z-50 transition-transform duration-300 ease-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}>
         {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full hover:bg-muted transition-colors duration-200"
-          aria-label="Close panel"
-        >
+        <button onClick={onClose} className="absolute top-4 right-4 p-2 rounded-full hover:bg-muted transition-colors duration-200" aria-label="Close panel">
           <X className="w-5 h-5 text-muted-foreground" />
         </button>
 
@@ -45,10 +32,7 @@ export function ContactSidePanel({ isOpen, onClose }: ContactSidePanelProps) {
               </div>
               <div>
                 <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Email</div>
-                <a 
-                  href="mailto:ftrendering2311@gmail.com" 
-                  className="text-foreground hover:text-accent transition-colors duration-200 text-sm font-medium"
-                >
+                <a href="mailto:ftrendering2311@gmail.com" className="text-foreground hover:text-accent transition-colors duration-200 text-sm font-medium">
                   ftrendering2311@gmail.com
                 </a>
               </div>
@@ -61,16 +45,10 @@ export function ContactSidePanel({ isOpen, onClose }: ContactSidePanelProps) {
               </div>
               <div>
                 <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Phone</div>
-                <a 
-                  href="tel:07886146544" 
-                  className="text-foreground hover:text-accent transition-colors duration-200 block text-sm font-medium"
-                >
-                  07 886 146 544
+                <a href="tel:07886146544" className="text-foreground hover:text-accent transition-colors duration-200 block text-sm font-medium">
+                  +44 7886 146 544
                 </a>
-                <a 
-                  href="tel:07526748831" 
-                  className="text-foreground hover:text-accent transition-colors duration-200 block text-sm font-medium mt-1"
-                >
+                <a href="tel:07526748831" className="text-foreground hover:text-accent transition-colors duration-200 block text-sm font-medium mt-1">
                   07 526 748 831
                 </a>
               </div>
@@ -98,6 +76,5 @@ export function ContactSidePanel({ isOpen, onClose }: ContactSidePanelProps) {
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 }
