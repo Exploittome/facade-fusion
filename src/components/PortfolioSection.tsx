@@ -19,7 +19,7 @@ import portfolio13 from "@/assets/portfolio-13.jpg";
 
 const portfolioItems = [
   {
-    title: "Victorian Terraced House",
+    title: "Semi-Detached House",
     category: "Silicone Render",
     image: portfolio1,
   },
