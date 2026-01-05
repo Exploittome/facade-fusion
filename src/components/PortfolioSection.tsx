@@ -70,7 +70,7 @@ const portfolioItems = [
   },
   {
     title: "Country Cottage",
-    category: "External Insulation",
+    category: "EWI + silicone render",
     image: portfolio11,
   },
   {
