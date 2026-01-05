@@ -39,7 +39,7 @@ const portfolioItems = [
     image: portfolio4,
   },
   {
-    title: "Contemporary House",
+    title: "Semi-Detached House",
     category: "Premium Render",
     image: portfolio5,
   },
