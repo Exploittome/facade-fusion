@@ -40,7 +40,7 @@ const portfolioItems = [
   },
   {
     title: "Semi-Detached House",
-    category: "Premium Render",
+    category: "Silicone Render",
     image: portfolio5,
   },
   {
