@@ -30,7 +30,7 @@ const portfolioItems = [
   },
   {
     title: "Semi-Detached House",
-    category: "Complete Facade",
+    category: "Silicone Render",
     image: portfolio3,
   },
   {
