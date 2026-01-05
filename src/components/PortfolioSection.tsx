@@ -34,7 +34,7 @@ const portfolioItems = [
     image: portfolio3,
   },
   {
-    title: "Modern Semi-Detached",
+    title: "Semi-Detached",
     category: "Facade Renovation",
     image: portfolio4,
   },
