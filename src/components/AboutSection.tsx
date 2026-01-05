@@ -35,9 +35,7 @@ export function AboutSection() {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                With over two decades of experience in the construction industry, 
-                we have established ourselves as leaders in facade solutions and 
-                external wall insulation systems.
+                With over eight decades of experience in the construction industry, we have established ourselves as leaders in facade solutions and external wall insulation systems.
               </p>
               <p>
                 Our commitment to craftsmanship means every project receives 
