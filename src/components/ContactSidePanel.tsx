@@ -33,7 +33,7 @@ export function ContactSidePanel({
               <div>
                 <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Email</div>
                 <a href="mailto:ftrendering2311@gmail.com" className="text-foreground hover:text-accent transition-colors duration-200 text-sm font-medium">
-                  ftrendering2311@gmail.com
+                  info@ftrendering.co.uk
                 </a>
               </div>
             </div>
