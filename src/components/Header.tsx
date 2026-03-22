@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useActiveSection } from "@/hooks/useActiveSection";
-import logo from "@/assets/logo.png";
-
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#services", label: "Our Services" },
@@ -57,7 +55,7 @@ export function Header() {
             className="flex items-center gap-3"
           >
             <img 
-              src={logo} 
+              src="/logo.png?v=2" 
               alt="FTRENDERING Logo" 
               className="h-16 w-auto object-contain dark:invert dark:brightness-100 brightness-0 relative z-10"
             />
