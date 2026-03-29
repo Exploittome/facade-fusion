@@ -55,7 +55,7 @@ export function Header() {
             className="flex items-center gap-3"
           >
             <img 
-              src="/logo.png?v=3" 
+              src="/logo.png?v=4" 
               alt="FTRENDERING Logo" 
               className="h-16 w-auto object-contain dark:invert dark:brightness-100 brightness-0 relative z-10"
             />
